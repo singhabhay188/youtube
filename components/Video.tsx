@@ -1,5 +1,6 @@
 import { VideoType } from "@/types/types";
 import formatViews from "@/utils/smallThings/formatNumber";
+import modifyHiToEn from "@/utils/smallThings/modifyHiToEn";
 import Link from "next/link";
 
 type VideoProps = {
@@ -33,7 +34,7 @@ const Video = ({ video, i }: VideoProps) => {
               <p className="text-sm text-gray-500">{video.channelTitle}</p>
             </div>
             <p className="text-sm text-gray-500">
-              {formatViews(video.viewCount)} • {video.publishedTimeText}
+              {formatViews(video.viewCount)} • {modifyHiToEn(video.publishedTimeText)}
             </p>
           </div>
         </div>
