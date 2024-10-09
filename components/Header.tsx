@@ -1,10 +1,14 @@
+"use client";
 import { Input } from "@/components/ui/input";
 import YoutubeLogo from "@/components/YoutubeLogo";
 import { Button } from "@/components/ui/button";
 import { Bell, Menu, Mic, Search, Video } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const Header = () => {
+  const [search, setSearch] = useState("");
+
   return (
     <header className="flex items-center justify-between px-4 py-2 border-b">
       <div className="flex items-center">
@@ -18,13 +22,15 @@ const Header = () => {
       <div className="flex items-center flex-1 max-w-2xl ml-8">
         <form
           className="flex w-full max-w-sm items-center space-x-2"
-          action="/search"
+          action={`/search?q=${search}`}
         >
           <Input
             className="rounded-l-full"
             placeholder="Search"
             type="search"
             name="q"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
           <Button className="rounded-r-full" type="submit" variant="secondary">
             <Search className="h-4 w-4" />

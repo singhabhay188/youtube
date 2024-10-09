@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Aside = () => {
   return (
-    <aside className="w-60 overflow-y-auto border-r hidden lg:block">
+    <aside className="w-36 overflow-y-auto border-r hidden lg:block">
       <ScrollArea className="h-full">
         <nav className="flex flex-col gap-2 p-2">
           <Button className="justify-start" variant="ghost">

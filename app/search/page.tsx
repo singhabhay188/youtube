@@ -1,8 +1,11 @@
 "use client";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 export default function SearchPage() {
-  const q = "search";
+  const searchParams = useSearchParams();
+  const q = searchParams.get("q");
+  console.log(q);
 
   return (
     <main className="flex-1 overflow-y-auto p-4">
