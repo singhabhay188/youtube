@@ -1,25 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ThumbsUp } from "lucide-react";
-import { VideoInfoType } from "@/types/types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LoaderVideoInfo from "./LoaderVideoInfo";
-import fetchVideoInfo from "@/utils/fetchVideoInfo";
 import formatNumber from "@/utils/smallThings/formatNumber";
 import formatDays from "@/utils/smallThings/formatDays";
+import { VideoInfoType } from "@/types/types";
 
-const VideoInfoLarge = ({ id }: { id: string }) => {
-    const [videoInfo, setVideoInfo] = useState<undefined | VideoInfoType>(undefined);
+const VideoInfoLarge = ({ videoInfo }: { videoInfo: VideoInfoType | undefined }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-
-    useEffect(() => {
-        async function getVideoInfo() {
-            console.log('getting video info');
-            let info = await fetchVideoInfo(id);
-            console.log(info);
-            setVideoInfo(info);
-        }
-        getVideoInfo();
-    }, [id]);
 
     if (!videoInfo) {
         return <LoaderVideoInfo />;

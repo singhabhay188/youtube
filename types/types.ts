@@ -45,7 +45,7 @@ export type VideoInfoType = {
   msg: string;
 };
 
-type VideoData = {
+export type VideoData = {
   type: string;
   videoId: string;
   title: string;
