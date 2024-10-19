@@ -5,7 +5,7 @@ import { VideoInfoType, VideoType } from "@/types/types";
 export default async function fetchVideoInfo(id: String) {
   const options = {
     method: "GET",
-    url: "https://yt-api.p.rapidapi.com/video/info",
+    url: "https://yt-api.p.rapidapi.com/related",
     params: { id },
     headers: {
       "x-rapidapi-key": API_KEY,

@@ -16,7 +16,7 @@ const fetchSearch = async (query:string) => {
     const response = await axios.request(options);
     console.log("fetch successfull for query:",query);
     let data = response.data.data;
-    data = data.filter((video: VideoType) => video.type === "video");
+    data = data.filter((video: VideoType) => video.type === "video" && video.channelTitle !== "YouTube Movies & TV");
     return data;
   } catch (error) {
     console.error(error);

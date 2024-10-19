@@ -18,7 +18,7 @@ const Video = ({ video, i }: VideoProps) => {
       <div className="rounded-lg overflow-hidden w-full max-w-[450px] mx-auto">
         <img
           alt="Video thumbnail"
-          className="w-full object-cover transition-transform group-hover:scale-105"
+          className="w-full object-cover transition-transform group-hover:scale-105 min-h-[250px]"
           src={getThumbnail(video.thumbnail)}
           width="full"
         />
@@ -29,7 +29,7 @@ const Video = ({ video, i }: VideoProps) => {
               <img
                 alt="Channel thumbnail"
                 className="w-10 h-10 rounded-full mr-2"
-                src={video.channelThumbnail[0].url}
+                src={video.channelThumbnail?.length>0 ? video.channelThumbnail[0]?.url : 'https://placehold.co/40'}
               />
               <p className="text-sm text-gray-500">{video.channelTitle}</p>
             </div>

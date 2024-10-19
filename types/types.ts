@@ -21,28 +21,42 @@ export type VideoType = {
 };
 
 export type VideoInfoType = {
-  id: string;
+  meta: {
+    videoId: string;
+    title: string;
+    viewCount: string;
+    likeCount: string;
+    superTitle: string;
+    publishDate: string;
+    publishedAt: string;
+    channelId: string;
+    channelHandle: string;
+    channelTitle: string;
+    channelThumbnail: Thumbnail[];
+    subscriberCountText: string;
+    subscriberCount: number;
+    channelBadges: string[];
+    description: string;
+    commentCountText: string;
+    commentCount: number;
+  };
+  continuation: string;
+  data: VideoData[];
+  msg: string;
+};
+
+type VideoData = {
+  type: string;
+  videoId: string;
   title: string;
-  lengthSeconds: string;
-  keywords: string[];
-  channelTitle: string;
-  channelId: string;
-  description: string;
-  thumbnail: Thumbnail[];
-  allowRatings: boolean;
+  lengthText: string;
   viewCount: string;
-  isPrivate: boolean;
-  isUnpluggedCorpus: boolean;
-  isLiveContent: boolean;
-  isCrawlable: boolean;
-  isFamilySafe: boolean;
-  availableCountries: string[];
-  isUnlisted: boolean;
-  category: string;
+  publishedTimeText: string;
   publishDate: string;
   publishedAt: string;
-  uploadDate: string;
-  isShortsEligible: boolean;
-  subtitles: any;
-  storyboards: any;
-};
+  thumbnail: Thumbnail[];
+  channelTitle: string;
+  channelId: string;
+  channelHandle: string;
+  channelThumbnail: Thumbnail[];
+}
