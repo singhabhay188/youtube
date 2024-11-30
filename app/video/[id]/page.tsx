@@ -17,7 +17,7 @@ export default function VideoPage() {
   useEffect(() => {
     async function getVideoInfo() {
       console.log('getting video info');
-      let info = await fetchVideoInfo(id);
+      const info = await fetchVideoInfo(id);
       console.log(info);
       setVideoInfo(info);
     }

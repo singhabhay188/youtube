@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Bell, Menu, Mic, Search, Video } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 const Header = () => {
   const [search, setSearch] = useState("");
@@ -48,7 +49,7 @@ const Header = () => {
           <Bell className="h-5 w-5" />
         </Button>
         <Button className="rounded-full" size="icon" variant="ghost">
-          <img
+          <Image
             alt="User"
             className="rounded-full"
             height="32"

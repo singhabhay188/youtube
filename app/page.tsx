@@ -10,7 +10,7 @@ export default function HomePage() {
 
   useEffect(() => {
     async function getvideos() {
-      let fvideos = await fetchVideos();
+      const fvideos = await fetchVideos();
       setVideos(fvideos);
     }
     getvideos();

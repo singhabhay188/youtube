@@ -1,6 +1,7 @@
 import { VideoType } from "@/types/types";
 import formatViews from "@/utils/smallThings/formatNumber";
 import modifyHiToEn from "@/utils/smallThings/modifyHiToEn";
+import Image from "next/image";
 import Link from "next/link";
 
 type VideoProps = {
@@ -16,17 +17,16 @@ const Video = ({ video, i }: VideoProps) => {
   return (
     <Link href={`/video/${video.videoId}`} key={i} className="group">
       <div className="rounded-lg overflow-hidden w-full max-w-[450px] mx-auto">
-        <img
+        <Image
           alt="Video thumbnail"
           className="w-full object-cover transition-transform group-hover:scale-105 min-h-[250px]"
           src={getThumbnail(video.thumbnail)}
-          width="full"
         />
         <div className="p-2">
           <h3 className="font-semibold line-clamp-2">{video.title}</h3>
           <div className="items-center flex justify-between">
             <div className="flex items-center">
-              <img
+              <Image
                 alt="Channel thumbnail"
                 className="w-10 h-10 rounded-full mr-2"
                 src={video.channelThumbnail?.length>0 ? video.channelThumbnail[0]?.url : 'https://placehold.co/40'}

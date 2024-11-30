@@ -5,6 +5,7 @@ import LoaderVideoInfo from "./LoaderVideoInfo";
 import formatNumber from "@/utils/smallThings/formatNumber";
 import formatDays from "@/utils/smallThings/formatDays";
 import { VideoInfoType } from "@/types/types";
+import Image from "next/image";
 
 const VideoInfoLarge = ({ videoInfo }: { videoInfo: VideoInfoType | undefined }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -29,7 +30,7 @@ const VideoInfoLarge = ({ videoInfo }: { videoInfo: VideoInfoType | undefined })
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                     <div className="overflow-hidden border w-10 h-10 border-gray-500 rounded-full">
-                        <img
+                        <Image
                             alt="Channel thumbnail"
                             className="w-10 h-10 rounded-full mr-2"
                             src={videoInfo.meta.channelThumbnail[0]?.url || "https://placehold.co/40"}

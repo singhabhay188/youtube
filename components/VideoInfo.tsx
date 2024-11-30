@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { ThumbsUp } from "lucide-react";
+import Image from "next/image";
 
 const VideoInfo = () => {
   return (
@@ -8,7 +9,7 @@ const VideoInfo = () => {
       <h1 className="text-2xl font-bold mb-2">Video Title</h1>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
-          <img
+          <Image
             alt="Channel avatar"
             className="w-10 h-10 rounded-full mr-2"
             src="https://placehold.co/40"

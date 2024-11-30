@@ -4,6 +4,7 @@ import modifyHiToEn from "@/utils/smallThings/modifyHiToEn"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Image from "next/image"
 
 type VideoProps = {
   video: VideoType
@@ -19,7 +20,7 @@ export default function VideoNew({ video, i }: VideoProps) {
     <Link href={`/video/${video.videoId}`} key={i} className="group">
       <Card className="overflow-hidden transition-shadow hover:shadow-lg max-w-[500px]">
         <div className="aspect-video relative overflow-hidden">
-          <img
+          <Image
             alt={`Thumbnail for ${video.title}`}
             className="object-cover w-full h-full transition-transform group-hover:scale-105"
             src={getThumbnail(video.thumbnail)}

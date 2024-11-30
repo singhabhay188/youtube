@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Card } from "./ui/card";
 import { VideoData } from "@/types/types";
+import Image from "next/image";
 
 const RecommendedVideos = ({ videos }: { videos: VideoData[] | undefined }) => {
   const [loading, setLoading] = useState(true);
@@ -41,14 +42,14 @@ const RecommendedVideos = ({ videos }: { videos: VideoData[] | undefined }) => {
       <ScrollArea className="h-full">
         <div className="p-4">
           <h3 className="font-semibold mb-4">Up next</h3>
-          {videos?.map((video, i) => (
+          {videos?.map((video) => (
             <Link
               href={`/video/${video.videoId}`}
               key={video.videoId}
             >
               <Card className="flex gap-2 mb-4 rounded-none items-center hover:scale-[101%] overflow-hidden">
                 <div className="w-40 h-24 bg-red-900 relative">
-                  <img
+                  <Image
                     alt={video.title}
                     className="absolute inset-0 w-full h-full object-cover rounded-lg transition-transform"
                     src={video.thumbnail[0]?.url || "https://placehold.co/96x160"}
